@@ -1,77 +1,134 @@
-# Proyecto: Análisis de Comportamiento de Usuarios de Spotify
+# 🎵 Dashboard de Comportamiento de Usuarios Spotify
 
-Este proyecto contiene un análisis exploratorio de datos (EDA) y un dashboard interactivo de Streamlit para visualizar el comportamiento de los usuarios de Spotify.
+Un dashboard interactivo creado con Streamlit para analizar y visualizar el comportamiento de usuarios de Spotify basado en datos reales de 50,000 usuarios.
 
-## 📋 Tabla de Contenidos
+## 📊 Características Principales
 
-- [Descripción del Proyecto](#-descripción-del-proyecto)
-- [Configuración del Entorno](#-configuración-del-entorno)
-- [Datos](#-datos)
-- [Ejecución del Dashboard](#-ejecución-del-dashboard)
+### Métricas KPI
+- Usuarios activos vs inactivos
+- Edad promedio de los usuarios
+- Horas de escucha promedio por semana
+- Número promedio de playlists creadas
+- Calificación promedio de sugerencias musicales
 
-## 📝 Descripción del Proyecto
+### Visualizaciones Interactivas
+- **Distribución de tipos de suscripción** (Premium Individual, Family, Duo, Student, Free)
+- **Estado de suscripción** (Activos vs Inactivos)
+- **Distribución demográfica** por edad
+- **Análisis de comportamiento** de escucha
+- **Top géneros musicales** favoritos
+- **Dispositivos principales** utilizados
+- **Interacción con anuncios** y conversión
+- **Calificaciones de sugerencias** musicales
+- **Características más valoradas** por los usuarios
+- **Análisis de países** con más usuarios
+- **Patrones de inactividad** por meses
 
-El objetivo de este proyecto es analizar el comportamiento de los usuarios de Spotify utilizando un dataset simulado. Se realizan diversas visualizaciones para entender patrones como la popularidad de los tipos de suscripción, la relación entre horas de escucha y la inactividad de los usuarios, los meses en los que los usuarios tienden a cancelar, los géneros musicales favoritos y las características más apreciadas de la plataforma. Finalmente, se despliega un dashboard interactivo utilizando Streamlit para una exploración más dinámica de los datos.
+### Filtros Interactivos
+- Filtrado por país
+- Filtrado por tipo de suscripción
+- Rango de edad ajustable
+- Filtrado por estado de suscripción en la tabla de datos
 
-## 🛠️ Configuración del Entorno
+## 🚀 Instalación y Ejecución
 
-Para ejecutar este proyecto, necesitarás tener Python y las siguientes librerías instaladas. Se recomienda usar un entorno virtual.
+### Prerrequisitos
+- Python 3.8 o superior
+- pip (gestor de paquetes de Python)
 
-1.  **Clona este repositorio (si aplica) o descarga los archivos del proyecto.**
+### Instalación
 
-2.  **Instala las dependencias de Python:**
-    Se ha generado un archivo `requirements.txt` con todas las librerías necesarias. Ejecuta el siguiente comando en tu terminal:
-    ```bash
-    pip install -r requirements.txt
-    ```
-    Las librerías incluyen `pandas`, `matplotlib`, `seaborn`, `streamlit`, `plotly`.
+1. **Clona o descarga el repositorio**
+   ```bash
+   git clone <url-del-repositorio>
+   cd spotify-dashboard
+   ```
 
-3.  **Para la ejecución en Google Colab:**
-    Asegúrate de que `npx` (parte de Node.js) esté disponible para `localtunnel`. Colab generalmente ya lo tiene, pero si no, es posible que necesites instalar Node.js/npm.
+2. **Instala las dependencias**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-## 📊 Datos
+3. **Ejecuta el dashboard**
+   ```bash
+   streamlit run streamlit_app.py
+   ```
 
-El análisis se basa en el archivo `spotify_user_behavior.csv`. Este dataset contiene información simulada sobre el comportamiento de los usuarios de Spotify, incluyendo:
+4. **Accede al dashboard**
+   - Abre tu navegador web en: `http://localhost:8501`
 
--   `user_id`: Identificador único del usuario.
--   `country`: País del usuario.
--   `age`: Edad del usuario.
--   `signup_date`: Fecha de registro.
--   `subscription_type`: Tipo de suscripción (e.g., Premium Individual, Free).
--   `subscription_status`: Estado de la suscripción.
--   `months_inactive`: Meses que el usuario ha estado inactivo.
--   `inactive_3_months_flag`: Bandera si el usuario ha estado inactivo por más de 3 meses.
--   `ad_interaction`: Interacción con anuncios.
--   `ad_conversion_to_subscription`: Conversión de anuncio a suscripción.
--   `music_suggestion_rating_1_to_5`: Calificación de sugerencias musicales.
--   `avg_listening_hours_per_week`: Horas de escucha promedio por semana.
--   `favorite_genre`: Género musical favorito.
--   `most_liked_feature`: Característica más gustada de la plataforma.
--   `desired_future_feature`: Característica futura deseada.
--   `primary_device`: Dispositivo principal.
--   `playlists_created`: Número de playlists creadas.
--   `avg_skips_per_day`: Saltos promedio por día.
+## 📁 Estructura del Proyecto
 
-Asegúrate de que este archivo CSV esté en la misma ruta que el notebook de Colab o el script de Python cuando ejecutes el análisis.
+```
+spotify-dashboard/
+│
+├── streamlit_app.py              # Aplicación principal del dashboard
+├── spotify_user_behavior_realistic_50000_rows.csv  # Dataset de usuarios
+├── requirements.txt              # Dependencias del proyecto
+└── README.md                     # Documentación del proyecto
+```
 
-## 🚀 Ejecución del Dashboard
+## 📊 Dataset
 
-El dashboard interactivo ha sido creado con Streamlit. Puedes ejecutarlo de la siguiente manera:
+El dataset contiene información de 50,000 usuarios de Spotify con las siguientes variables:
 
-1.  Asegúrate de haber ejecutado las celdas de carga y limpieza de datos en el notebook de Colab, ya que el dashboard espera que el DataFrame `df` esté pre-cargado y limpio.
+- **id_usuario**: Identificador único del usuario
+- **pais**: País de residencia
+- **edad**: Edad del usuario
+- **fecha_registro**: Fecha de registro en la plataforma
+- **tipo_suscripcion**: Tipo de plan (Free, Premium Individual, Family, Duo, Student)
+- **estado_suscripcion**: Estado actual (Active/Inactive)
+- **meses_inactivo**: Número de meses sin actividad
+- **bandera_inactivo_3_meses**: Indicador de inactividad > 3 meses
+- **interaccion_anuncio**: Si interactúa con anuncios (Yes/No)
+- **conversion_anuncio_a_suscripcion**: Si se convirtió por anuncios
+- **calificacion_sugerencia_musica_1_a_5**: Calificación de sugerencias (1-5)
+- **horas_escucha_promedio_por_semana**: Horas de escucha semanales
+- **genero_favorito**: Género musical preferido
+- **caracteristica_mas_gustada**: Feature más valorada
+- **caracteristica_futura_deseada**: Feature deseada para el futuro
+- **dispositivo_principal**: Dispositivo principal de uso
+- **playlists_creadas**: Número de playlists creadas
+- **saltos_promedio_por_dia**: Promedio de saltos diarios
 
-2.  Ejecuta el script `dashboard_spotify.py` usando `streamlit` y `localtunnel` para acceder a él a través de una URL pública (especialmente útil en entornos como Google Colab):
-    ```bash
-    streamlit run dashboard_spotify.py & npx localtunnel --port 8501
-    ```
-    Esto iniciará el servidor de Streamlit en el puerto 8501 y `localtunnel` generará una URL pública que podrás usar para acceder al dashboard desde tu navegador.
+## 🛠️ Tecnologías Utilizadas
 
-3.  Una vez que veas el mensaje `your url is: [una URL]` en la salida, abre esa URL en tu navegador.
+- **Streamlit**: Framework para aplicaciones web de datos
+- **Pandas**: Manipulación y análisis de datos
+- **Plotly**: Gráficos interactivos
+- **Matplotlib/Seaborn**: Visualizaciones adicionales
+- **Python**: Lenguaje de programación principal
 
-4.  Para detener el dashboard y `localtunnel` en Colab, puedes usar los siguientes comandos en una nueva celda de código:
-    ```python
-    !pgrep -f "streamlit run dashboard_spotify.py" | xargs kill -9
-    !pgrep -f "npx localtunnel --port 8501" | xargs kill -9
-    print("Streamlit y localtunnel detenidos.")
-    ```
-    O simplemente reiniciar el entorno de ejecución de Colab (Entorno de ejecución -> Reiniciar entorno de ejecución...).
+## 📈 Funcionalidades
+
+### Dashboard Interactivo
+- **Filtros en tiempo real**: Los gráficos se actualizan automáticamente según los filtros aplicados
+- **Métricas dinámicas**: Los KPIs se recalculan basándose en los datos filtrados
+- **Visualizaciones responsivas**: Gráficos que se adaptan al tamaño de la pantalla
+
+### Análisis de Datos
+- **Limpieza automática**: El código incluye funciones para limpiar y preparar los datos
+- **Cálculos estadísticos**: Promedios, distribuciones y correlaciones
+- **Agrupaciones inteligentes**: Análisis por categorías relevantes
+
+## 🤝 Contribución
+
+Si deseas contribuir al proyecto:
+
+1. Fork el repositorio
+2. Crea una rama para tu feature (`git checkout -b feature/nueva-funcionalidad`)
+3. Commit tus cambios (`git commit -am 'Agrega nueva funcionalidad'`)
+4. Push a la rama (`git push origin feature/nueva-funcionalidad`)
+5. Abre un Pull Request
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
+
+## 📞 Contacto
+
+Para preguntas o sugerencias, por favor abre un issue en el repositorio.
+
+---
+
+**Desarrollado con ❤️ para análisis de datos de Spotify**
