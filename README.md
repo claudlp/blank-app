@@ -1,5 +1,3 @@
-# 🧹 Limpiador de Datos CSV
-
 # Proyecto: Análisis de Comportamiento de Usuarios de Spotify
 
 Este proyecto contiene un análisis exploratorio de datos (EDA) y un dashboard interactivo de Streamlit para visualizar el comportamiento de los usuarios de Spotify.
