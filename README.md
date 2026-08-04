@@ -125,8 +125,6 @@ Si deseas contribuir al proyecto:
 
 Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
 
-## 📞 Contacto
-
 Para preguntas o sugerencias, por favor abre un issue en el repositorio.
 
 ---
